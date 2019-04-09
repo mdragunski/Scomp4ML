@@ -1,0 +1,4 @@
+# Ignore data and output folder
+data/
+output/
+
