@@ -164,7 +164,7 @@ profil="marc"
 if (profil=="marc"){
   datapath="/home/marc/Uni-stuff/Master/Masterarbeit Marc/Scomp4ML/data"
   preprocessingpath="/home/marc/Uni-stuff/Master/Masterarbeit Marc/Scomp4ML/preprocessing"
-  #resultpath<-paste("/media/hanna/ubt_kdata_0005/pub_rapidminer/Results/",response, "_", substr(inputTable,1,nchar(inputTable)-4),sep="")
+  resultpath="/home/marc/Uni-stuff/Master/Masterarbeit Marc/Scomp4ML/output"
   #scriptpath="/home/hanna/Documents/Projects/IDESSA/Precipitation/1_comparisonML/subscripts/"
   #additionalFunctionPath="/home/hanna/Documents/Projects/IDESSA/Precipitation/1_comparisonML/functions"
 }
@@ -173,11 +173,12 @@ setwd(preprocessingpath)
 ##################################################################################################################
 #                                          Load functions and packages
 ##################################################################################################################
-#usedPackages=c("caret","kernlab","ROCR","raster","latticeExtra","fields","reshape2",
-#               "grid","maps","mapdata","sp","rgdal","RColorBrewer","lattice","doParallel","hydroGOF","corrplot")
-#usedPackages=c("raster".....
+library(devtools)
+install_github("HannaMeyer/MSGtools")
+#usedPackages=c("raster", "caret", "MSGtools", "corrplot")
 
-#lapply(usedPackages, library, character.only=T)
+lapply(usedPackages, library, character.only=T)
+
 #for (i in list.files(additionalFunctionPath)){
 #  source(paste(additionalFunctionPath,"/",i,sep=""))
 #}
